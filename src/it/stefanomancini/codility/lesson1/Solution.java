@@ -24,6 +24,23 @@ package it.stefanomancini.codility.lesson1;
 class Solution {
 
     public int solution(int N) {
-        return N;
+        String binaryN = Integer.toBinaryString(N);
+        System.out.println("The binary representaion of " + N + " is: " + binaryN);
+        int i = 0;
+        int binaryGap = 0;
+        while (i < binaryN.length() && binaryN.charAt(i) != '1')
+            i++;
+        int count = 0;
+        for (i++; i < binaryN.length(); i++) {
+            if (binaryN.charAt(i) == '1') {
+                if (count > 0)
+                    System.out.println("Found binary gap of length: " + count);
+                if (count > binaryGap)
+                    binaryGap = count;
+                count = 0;
+            } else
+                count++;
+        }
+        return binaryGap;
     }
 }

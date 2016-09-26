@@ -2,5 +2,5 @@
 .idea/
 *.iml
 
-# Build output
+# Build output #
 out/

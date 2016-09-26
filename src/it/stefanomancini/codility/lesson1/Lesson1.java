@@ -19,23 +19,25 @@ package it.stefanomancini.codility.lesson1;
 public class Lesson1 {
 
     public static void main(String[] args) {
-        //Prepare test data
-        int tests[] = {9, 529, 20, 15};
-        int results[] = {2, 4, 1, 0};
-        int success = 0;
         Solution solution = new Solution();
+
+        //Prepare test data
+        int tests[] = {9, 529, 20, 15, 0};
+        int results[] = {2, 4, 1, 0, 0};
+        int success = 0;
 
         //Run test
         for (int i = 0; i < tests.length; i++) {
-            System.out.print("Test #" + i);
+            System.out.println("*** Test #" + i);
             int result = solution.solution(tests[i]);
             if (result == results[i]) {
-                System.out.println(" passed.");
+                System.out.println("=> Passed.");
                 success++;
             } else {
-                System.out.println(" failed.");
+                System.out.println("=> Failed.");
             }
         }
+
         System.out.println("Success rate: " + Math.round(success / tests.length * 100) + "%");
     }
 }
