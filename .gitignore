@@ -1,0 +1,6 @@
+# IntelliJ Idea folders and files #
+.idea/
+*.iml
+
+# Build output
+out/
