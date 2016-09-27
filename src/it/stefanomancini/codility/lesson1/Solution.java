@@ -23,7 +23,7 @@ package it.stefanomancini.codility.lesson1;
  */
 class Solution {
 
-    public int solution(int N) {
+    int solution(int N) {
         int binaryGap = 0;
         int count = -1;
         while (N > 0) {
