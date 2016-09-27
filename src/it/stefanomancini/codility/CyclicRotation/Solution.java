@@ -14,16 +14,27 @@
  * limitations under the License.
  */
 
-package it.stefanomancini.codility.lesson2;
+package it.stefanomancini.codility.CyclicRotation;
 
 /**
- * Solution to Codility Lesson #2
+ * Solution to Codility Lesson #2 Cyclic Rotation
  *
  * @author Stefano Mancini
  */
 class Solution {
 
-    int solution(int N) {
-        return N;
+    int[] solution(int[] A, int K) {
+        int N = A.length;
+        K = (N == 0) ? 0 : K % N;
+
+        if (K == 0)
+            return A;
+
+        int[] result = new int[N];
+        for (int i = 0; i < N; i++) {
+            result[i] = A[(N - K + i) % N];
+        }
+
+        return result;
     }
 }
