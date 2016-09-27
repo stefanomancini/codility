@@ -24,22 +24,20 @@ package it.stefanomancini.codility.lesson1;
 class Solution {
 
     public int solution(int N) {
-        String binaryN = Integer.toBinaryString(N);
-        System.out.println("The binary representaion of " + N + " is: " + binaryN);
-        int i = 0;
+        //Skip zeroes
+        while (N > 0 && N % 2 == 0)
+            N = N / 2;
+        //Find longest binary gap
         int binaryGap = 0;
-        while (i < binaryN.length() && binaryN.charAt(i) != '1')
-            i++;
         int count = 0;
-        for (i++; i < binaryN.length(); i++) {
-            if (binaryN.charAt(i) == '1') {
-                if (count > 0)
-                    System.out.println("Found binary gap of length: " + count);
+        while (N > 0) {
+            if (N % 2 == 1) {
                 if (count > binaryGap)
                     binaryGap = count;
                 count = 0;
             } else
                 count++;
+            N = N / 2;
         }
         return binaryGap;
     }
