@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package it.stefanomancini.codility.lesson1;
+package it.stefanomancini.codility.BinaryGap;
 
 /**
- * Solution to Codility Lesson #1
+ * Solution to Codility Lesson #1 Binary Gap
  *
  * @author Stefano Mancini
  */

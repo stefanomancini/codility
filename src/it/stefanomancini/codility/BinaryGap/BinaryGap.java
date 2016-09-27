@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package it.stefanomancini.codility.lesson1;
+package it.stefanomancini.codility.BinaryGap;
 
-public class Lesson1 {
+public class BinaryGap {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
