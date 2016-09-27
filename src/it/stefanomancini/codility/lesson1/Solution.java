@@ -24,18 +24,14 @@ package it.stefanomancini.codility.lesson1;
 class Solution {
 
     public int solution(int N) {
-        //Skip zeroes
-        while (N > 0 && N % 2 == 0)
-            N = N / 2;
-        //Find longest binary gap
         int binaryGap = 0;
-        int count = 0;
+        int count = -1;
         while (N > 0) {
             if (N % 2 == 1) {
                 if (count > binaryGap)
                     binaryGap = count;
                 count = 0;
-            } else
+            } else if (count >= 0)
                 count++;
             N = N / 2;
         }
