@@ -16,8 +16,6 @@
 
 package it.stefanomancini.codility.OddOccurencesInArray;
 
-import java.util.Arrays;
-
 /**
  * Solution to Codility Lesson #2 Cyclic Rotation
  *
@@ -27,20 +25,9 @@ class Solution {
 
     int solution(int[] A) {
         //A = {9, 3, 9, 3, 9, 7, 9};
-        System.out.println("Input: " + Arrays.toString(A));
-        for (int i = 0; i < A.length; i++) {
-            if (A[i] != 0) {
-                boolean paired = false;
-                for (int j = i + 1; j < A.length; j++)
-                    if (A[i] == A[j]) {
-                        A[i] = A[j] = 0;
-                        paired = true;
-                        break;
-                    }
-                if (!paired)
-                    return A[i];
-            }
-        }
-        return 0;
+        int result = 0;
+        for (int i = 0; i < A.length; i++)
+            result = result ^ A[i];
+        return result;
     }
 }
