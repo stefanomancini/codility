@@ -28,11 +28,10 @@ class Solution {
         sums[0] = A[0];
         for (int i = 1; i < A.length; i++)
             sums[i] = sums[i - 1] + A[i];
+
         int minDifference = Math.abs(sums[0] - (sums[A.length - 1] - sums[0]));
-        System.out.println("Difference for p = 1 is " + minDifference);
         for (int p = 2; p < A.length; p++) {
             int difference = Math.abs(sums[p - 1] - (sums[A.length - 1] - sums[p - 1]));
-            System.out.println("Difference for p = " + p + " is " + difference);
             if (difference < minDifference)
                 minDifference = difference;
         }
