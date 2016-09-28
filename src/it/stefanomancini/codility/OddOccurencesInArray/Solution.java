@@ -17,7 +17,7 @@
 package it.stefanomancini.codility.OddOccurencesInArray;
 
 /**
- * Solution to Codility Lesson #2 Cyclic Rotation
+ * Solution to Codility Lesson #2 Odd Occurrences In Array
  *
  * @author Stefano Mancini
  */
