@@ -26,15 +26,15 @@ class Solution {
     int solution(int X, int[] A) {
         //Initialise tracking variables
         boolean[] covered = new boolean[X];
-        int allCovered = X * (X + 1) / 2;
+        int allCovered = X;
         //Find solution
         for (int i = 0; i < A.length; i++) {
             if (!covered[A[i] - 1]) {
                 covered[A[i] - 1] = true;
-                allCovered -= A[i];
-                if (allCovered == 0)
-                    return i;
+                allCovered--;
             }
+            if (allCovered == 0)
+                return i;
         }
         return -1;
     }
