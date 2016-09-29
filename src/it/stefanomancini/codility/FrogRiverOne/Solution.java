@@ -16,8 +16,6 @@
 
 package it.stefanomancini.codility.FrogRiverOne;
 
-import java.util.Arrays;
-
 /**
  * Solution to Codility Lesson #2 Cyclic Rotation
  *
@@ -26,24 +24,17 @@ import java.util.Arrays;
 class Solution {
 
     int solution(int X, int[] A) {
-
         //Initialise tracking variables
         boolean[] covered = new boolean[X];
         int allCovered = X * (X + 1) / 2;
-        System.out.println("Path status: " + Arrays.toString(covered));
-        System.out.println("Path check : " + allCovered);
-
         //Find solution
         for (int i = 0; i < A.length; i++) {
-            System.out.println(" Iteration: " + i + " - Value: " + A[i]);
             if (!covered[A[i] - 1]) {
                 covered[A[i] - 1] = true;
                 allCovered -= A[i];
                 if (allCovered == 0)
                     return i;
             }
-            System.out.println(" Path status: " + Arrays.toString(covered));
-            System.out.println(" Path check : " + allCovered);
         }
         return -1;
     }
