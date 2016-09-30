@@ -24,18 +24,22 @@ package it.stefanomancini.codility.MaxCounters;
 class Solution {
 
     int[] solution(int N, int[] A) {
-        int[] result = new int[N];
-        int max = 0;
+        int[] count = new int[N];
+        int currentMax = 0;
+        int totalMax = 0;
         for (int value : A) {
             if (value == N + 1) {
-                for (int i = 0; i < N; i++)
-                    result[i] = max;
+                totalMax += currentMax;
+                currentMax = 0;
+                count = new int[N];
             } else {
-                result[value - 1]++;
-                if (result[value - 1] > max)
-                    max = result[value - 1];
+                count[value - 1]++;
+                if (count[value - 1] > currentMax)
+                    currentMax = count[value - 1];
             }
         }
-        return result;
+        for (int i = 0; i < N; i++)
+            count[i] += totalMax;
+        return count;
     }
 }

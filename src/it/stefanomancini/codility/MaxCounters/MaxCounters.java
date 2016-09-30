@@ -41,9 +41,15 @@ public class MaxCounters {
         int[] result1 = {3, 2, 2, 4, 2};
         int[] test2 = {};
         int[] result2 = {};
+        int[] test3 = {3, 4, 4, 6, 1, 6, 4, 6, 2};
+        int[] result3 = {4, 5, 4, 4, 4};
+        int[] test4 = {6, 6, 6, 1, 2, 3};
+        int[] result4 = {1, 1, 1, 0, 0};
         Test[] tests = {
                 new Test(test1, 5, result1),
-                new Test(test2, 0, result2)
+                new Test(test2, 0, result2),
+                new Test(test3, 5, result3),
+                new Test(test4, 5, result4)
         };
 
         //Run test
