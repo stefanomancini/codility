@@ -31,17 +31,13 @@ class Solution {
             if (value == N + 1) {
                 totalMax = currentMax;
             } else {
-                if (count[value - 1] < totalMax)
-                    count[value - 1] = totalMax + 1;
-                else
-                    count[value - 1]++;
-                if (count[value - 1] > currentMax)
-                    currentMax = count[value - 1];
+                count[value - 1] = Math.max(count[value - 1], totalMax);
+                count[value - 1]++;
+                currentMax = Math.max(currentMax, count[value - 1]);
             }
         }
         for (int i = 0; i < N; i++)
-            if (count[i] < totalMax)
-                count[i] = totalMax;
+            count[i] = Math.max(count[i], totalMax);
         return count;
     }
 }
