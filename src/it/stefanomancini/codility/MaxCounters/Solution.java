@@ -29,17 +29,19 @@ class Solution {
         int totalMax = 0;
         for (int value : A) {
             if (value == N + 1) {
-                totalMax += currentMax;
-                currentMax = 0;
-                count = new int[N];
+                totalMax = currentMax;
             } else {
-                count[value - 1]++;
+                if (count[value - 1] < totalMax)
+                    count[value - 1] = totalMax + 1;
+                else
+                    count[value - 1]++;
                 if (count[value - 1] > currentMax)
                     currentMax = count[value - 1];
             }
         }
         for (int i = 0; i < N; i++)
-            count[i] += totalMax;
+            if (count[i] < totalMax)
+                count[i] = totalMax;
         return count;
     }
 }
