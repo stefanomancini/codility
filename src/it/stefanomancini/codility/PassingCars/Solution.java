@@ -31,8 +31,11 @@ class Solution {
 
         int result = 0;
         for (int i = 0; i < N; i++)
-            if (A[i] == 0)
+            if (A[i] == 0) {
                 result += count[N] - count[i];
+                if (result > 1000000000)
+                    return -1;
+            }
         return result;
     }
 }
