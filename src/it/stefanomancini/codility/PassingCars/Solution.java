@@ -17,25 +17,23 @@
 package it.stefanomancini.codility.PassingCars;
 
 /**
- * Solution to Codility Lesson #2 Odd Occurrences In Array
+ * Solution to Codility Lesson #5 Passing Cars
  *
  * @author Stefano Mancini
  */
 class Solution {
 
     int solution(int[] A) {
-        int N = A.length;
-        int[] count = new int[N + 1];
-        for (int i = 1; i < N + 1; i++)
-            count[i] = count[i - 1] + A[i - 1];
-
-        int result = 0;
-        for (int i = 0; i < N; i++)
-            if (A[i] == 0) {
-                result += count[N] - count[i];
-                if (result > 1000000000)
+        int goingEastSoFar = 0;
+        int passingCars = 0;
+        for (int value : A)
+            if (value == 1) {//Car going West
+                passingCars += goingEastSoFar;
+                if (passingCars > 1000000000)
                     return -1;
+            } else {//Car going East
+                goingEastSoFar++;
             }
-        return result;
+        return passingCars;
     }
 }
