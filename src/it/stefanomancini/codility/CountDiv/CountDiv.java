@@ -22,10 +22,10 @@ public class CountDiv {
         Solution solution = new Solution();
 
         //Prepare test data
-        int A[] = {6, 2, 1, 5, 0, 0};
-        int B[] = {11, 3, 1, 15, 0, 2000000000};
-        int K[] = {2, 4, 1, 1, 1, 2};
-        int results[] = {3, 0, 1, 11, 0, 1000000000};
+        int A[] = {6, 11, 0, 1, 10, 10, 10};
+        int B[] = {11, 345, 0, 1, 10, 10, 10};
+        int K[] = {2, 17, 11, 11, 5, 7, 20};
+        int results[] = {3, 20, 1, 0, 1, 0, 0};
 
         //Run test
         int success = 0;

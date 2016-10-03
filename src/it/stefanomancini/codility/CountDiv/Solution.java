@@ -17,15 +17,22 @@
 package it.stefanomancini.codility.CountDiv;
 
 /**
- * Solution to Codility Lesson #1 Binary Gap
+ * Solution to Codility Lesson #5 Count Div
  *
  * @author Stefano Mancini
  */
 class Solution {
 
     int solution(int A, int B, int K) {
-        if (K > B)
-            return 0;
-        return (B - A + 1) / K;
+        int count = 0;
+        if (K < A)
+            count = (B - A) / K;
+        if (K >= A && K <= B)
+            count = B / K;
+        if (A % K == 0)
+            count++;
+        if (A != B && B % K == 0)
+            count++;
+        return count;
     }
 }
