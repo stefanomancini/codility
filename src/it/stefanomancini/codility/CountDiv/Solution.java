@@ -31,8 +31,6 @@ class Solution {
             count = B / K;
         if (A % K == 0)
             count++;
-        if (A != B && B % K == 0)
-            count++;
         return count;
     }
 }
