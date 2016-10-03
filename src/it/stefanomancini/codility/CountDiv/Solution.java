@@ -24,13 +24,9 @@ package it.stefanomancini.codility.CountDiv;
 class Solution {
 
     int solution(int A, int B, int K) {
-        int count = 0;
-        if (K < A)
-            count = (B - A) / K;
-        if (K >= A && K <= B)
-            count = B / K;
+        int n = (B / K) - (A / K);
         if (A % K == 0)
-            count++;
-        return count;
+            n++;
+        return n;
     }
 }
