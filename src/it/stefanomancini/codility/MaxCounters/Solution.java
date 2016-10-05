@@ -17,7 +17,8 @@
 package it.stefanomancini.codility.MaxCounters;
 
 /**
- * Solution to Codility Lesson #2 Cyclic Rotation
+ * Solution to Codility Lesson #2 Max Counters
+ * Note: looked for the solution online :-(
  *
  * @author Stefano Mancini
  */

@@ -17,7 +17,7 @@
 package it.stefanomancini.codility.MissingInteger;
 
 /**
- * Solution to Codility Lesson #2 Odd Occurrences In Array
+ * Solution to Codility Lesson #2 Missing Integer
  *
  * @author Stefano Mancini
  */

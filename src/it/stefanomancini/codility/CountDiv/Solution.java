@@ -18,6 +18,7 @@ package it.stefanomancini.codility.CountDiv;
 
 /**
  * Solution to Codility Lesson #5 Count Div
+ * Note: looked for the solution online :-(
  *
  * @author Stefano Mancini
  */

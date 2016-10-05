@@ -18,6 +18,7 @@ package it.stefanomancini.codility.PassingCars;
 
 /**
  * Solution to Codility Lesson #5 Passing Cars
+ * Note: looked for the solution online :-(
  *
  * @author Stefano Mancini
  */

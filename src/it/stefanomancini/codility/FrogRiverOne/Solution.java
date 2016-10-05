@@ -17,17 +17,15 @@
 package it.stefanomancini.codility.FrogRiverOne;
 
 /**
- * Solution to Codility Lesson #2 Cyclic Rotation
+ * Solution to Codility Lesson #2 Frog River One
  *
  * @author Stefano Mancini
  */
 class Solution {
 
     int solution(int X, int[] A) {
-        //Initialise tracking variables
         boolean[] covered = new boolean[X];
         int allCovered = X;
-        //Find solution
         for (int i = 0; i < A.length; i++) {
             if (!covered[A[i] - 1]) {
                 covered[A[i] - 1] = true;

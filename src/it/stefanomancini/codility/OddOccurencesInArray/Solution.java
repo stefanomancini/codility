@@ -18,6 +18,7 @@ package it.stefanomancini.codility.OddOccurencesInArray;
 
 /**
  * Solution to Codility Lesson #2 Odd Occurrences In Array
+ * Note: looked for the solution online :-(
  *
  * @author Stefano Mancini
  */
