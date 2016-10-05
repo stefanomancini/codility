@@ -16,8 +16,6 @@
 
 package it.stefanomancini.codility.GenomicRangeQuery;
 
-import java.util.Arrays;
-
 /**
  * Solution to Codility Lesson #5: Genomic Range Query
  *
@@ -26,7 +24,6 @@ import java.util.Arrays;
 class Solution {
 
     int[] solution(String S, int[] P, int[] Q) {
-        //Prepare data: O(n)
         int N = S.length();
         int[] A = new int[N + 1];
         int[] C = new int[N + 1];
@@ -53,18 +50,11 @@ class Solution {
                     break;
             }
         }
-        System.out.println("A : " + Arrays.toString(A));
-        System.out.println("C : " + Arrays.toString(C));
-        System.out.println("G : " + Arrays.toString(G));
-        System.out.println("T : " + Arrays.toString(T));
-
-        //Find result: O(m)
         int M = P.length;
         int[] R = new int[M];
         for (int i = 0; i < M; i++) {
             int left = P[i];
             int right = Q[i];
-            System.out.println("Slice: [" + left + "," + right + "]");
             int countA = A[right + 1] - A[left];
             int countC = C[right + 1] - C[left];
             int countG = G[right + 1] - G[left];
@@ -78,7 +68,6 @@ class Solution {
             else if (countT > 0)
                 R[i] = 4;
         }
-        System.out.println(Arrays.toString(R));
         return R;
     }
 }
