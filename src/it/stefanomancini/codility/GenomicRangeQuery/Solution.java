@@ -25,33 +25,32 @@ class Solution {
 
     int[] solution(String S, int[] P, int[] Q) {
         int N = S.length();
+        int M = P.length;
         int[] A = new int[N + 1];
         int[] C = new int[N + 1];
         int[] G = new int[N + 1];
-        int[] T = new int[N + 1];
+        int[] results = new int[M];
+
         for (int i = 1; i < N + 1; i++) {
-            char nucleotide = S.charAt(i - 1);
-            A[i] = A[i - 1] + ((nucleotide == 'A') ? 1 : 0);
-            C[i] = C[i - 1] + ((nucleotide == 'C') ? 1 : 0);
-            G[i] = G[i - 1] + ((nucleotide == 'G') ? 1 : 0);
-            T[i] = T[i - 1] + ((nucleotide == 'T') ? 1 : 0);
+            char genome = S.charAt(i - 1);
+            A[i] = A[i - 1] + ((genome == 'A') ? 1 : 0);
+            C[i] = C[i - 1] + ((genome == 'C') ? 1 : 0);
+            G[i] = G[i - 1] + ((genome == 'G') ? 1 : 0);
         }
-        int M = P.length;
-        int[] R = new int[M];
+
         for (int i = 0; i < M; i++) {
             int countA = A[Q[i] + 1] - A[P[i]];
             int countC = C[Q[i] + 1] - C[P[i]];
             int countG = G[Q[i] + 1] - G[P[i]];
-            int countT = T[Q[i] + 1] - T[P[i]];
             if (countA > 0)
-                R[i] = 1;
+                results[i] = 1;
             else if (countC > 0)
-                R[i] = 2;
+                results[i] = 2;
             else if (countG > 0)
-                R[i] = 3;
-            else if (countT > 0)
-                R[i] = 4;
+                results[i] = 3;
+            else
+                results[i] = 4;
         }
-        return R;
+        return results;
     }
 }
