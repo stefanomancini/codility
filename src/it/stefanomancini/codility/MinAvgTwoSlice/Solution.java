@@ -16,8 +16,6 @@
 
 package it.stefanomancini.codility.MinAvgTwoSlice;
 
-import java.util.Arrays;
-
 /**
  * Solution to Codility Lesson #2 Missing Integer
  *
@@ -26,27 +24,20 @@ import java.util.Arrays;
 class Solution {
 
     int solution(int[] A) {
-        int N = A.length;
-        float[] avg2elems = new float[N - 1];
-        float[] avg3elems = new float[N - 2];
-        for (int i = 0; i < N - 1; i++)
-            avg2elems[i] = (float) (A[i] + A[i + 1]) / 2;
-        System.out.println(Arrays.toString(avg2elems));
-        for (int i = 0; i < N - 2; i++)
-            avg3elems[i] = (float) (A[i] + A[i + 1] + A[i + 2]) / 3;
-        System.out.println(Arrays.toString(avg3elems));
         int position = 0;
-        float minAvg = avg2elems[0];
-        for (int i = 1; i < N - 1; i++)
-            if (avg2elems[i] < minAvg) {
-                position = i;
-                minAvg = avg2elems[i];
+        float minAvg = (float) (A[0] + A[1]) / 2;
+        for (int i = 2; i < A.length; i++) {
+            float avg = (float) (A[i - 1] + A[i]) / 2;
+            if (avg < minAvg) {
+                position = i - 1;
+                minAvg = avg;
             }
-        for (int i = 1; i < N - 2; i++)
-            if (avg3elems[i] < minAvg) {
-                position = i;
-                minAvg = avg3elems[i];
+            avg = (float) (A[i - 2] + A[i - 1] + A[i]) / 3;
+            if (avg < minAvg) {
+                position = i - 2;
+                minAvg = avg;
             }
+        }
         return position;
     }
 }
