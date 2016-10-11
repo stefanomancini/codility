@@ -35,8 +35,12 @@ public class MinAvgTwoSlice {
         //Prepare test data
         int[] test1 = {4, 2, 2, 5, 1, 5, 8};
         int result1 = 1;
+        int[] test2 = {-3, -5, -8, -4, -10};
+        int result2 = 2;
+
         Test[] tests = {
-                new Test(test1, result1)
+                new Test(test1, result1),
+                new Test(test2, result2),
         };
 
         //Run test

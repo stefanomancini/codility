@@ -16,6 +16,8 @@
 
 package it.stefanomancini.codility.MinAvgTwoSlice;
 
+import java.util.Arrays;
+
 /**
  * Solution to Codility Lesson #2 Missing Integer
  *
@@ -28,6 +30,8 @@ class Solution {
         float[] avg = new float[N - 1];
         for (int i = 0; i < N - 1; i++)
             avg[i] = (float) (A[i] + A[i + 1]) / 2;
+        System.out.println(Arrays.toString(avg));
+
         int position = 0;
         float minAvg = avg[0];
         for (int i = 1; i < N - 1; i++)
