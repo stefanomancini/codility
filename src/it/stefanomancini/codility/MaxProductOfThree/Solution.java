@@ -25,8 +25,10 @@ class Solution {
 
     int solution(int[] A) {
         int N = A.length;
-        mergesort(A, 0, A.length - 1); //O(n log n)
-        return A[N - 1] * A[N - 2] * A[N - 3]; //O(1): Only works for positive numbers
+        sort(A, 0, A.length - 1); //O(n log n)
+        int product1 = A[N - 1] * A[N - 2] * A[N - 3];
+        int product2 = A[N - 1] * A[0] * A[1];
+        return product1 > product2 ? product1 : product2;
     }
 
     /**
@@ -34,11 +36,11 @@ class Solution {
      *
      * @param ints The vector to be sorted.
      */
-    private void mergesort(int[] ints, int left, int right) {
+    private void sort(int[] ints, int left, int right) {
         if (left < right) {
             int center = (left + right) / 2;
-            mergesort(ints, left, center);
-            mergesort(ints, center + 1, right);
+            sort(ints, left, center);
+            sort(ints, center + 1, right);
             merge(ints, left, center, right);
         }
     }
