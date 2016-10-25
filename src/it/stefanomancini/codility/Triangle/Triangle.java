@@ -37,9 +37,12 @@ public class Triangle {
         int result1 = 1;
         int[] test2 = {10, 50, 5, 1};
         int result2 = 0;
+        int[] test3 = {2147483647, 2147483647, 2147483647};
+        int result3 = 0;
         Test[] tests = {
                 new Test(test1, result1),
-                new Test(test2, result2)
+                new Test(test2, result2),
+                new Test(test3, result3)
         };
 
         //Run test

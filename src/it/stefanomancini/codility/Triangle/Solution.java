@@ -33,7 +33,7 @@ class Solution {
             int Q = 1;
             int R = 2;
             while (R < A.length && triangle != 1) {
-                if (A[P] + A[Q] > A[R])
+                if ((long) A[P] + A[Q] > (long) A[R])
                     triangle = 1;
                 else {
                     P++;
@@ -44,5 +44,4 @@ class Solution {
         }
         return triangle;
     }
-
 }
