@@ -35,8 +35,11 @@ public class NumberOfDiscIntersections {
         //Prepare test data
         int[] test1 = {1, 5, 2, 1, 4, 0};
         int result1 = 11;
+        int[] test2 = {1, 2147483647, 0};
+        int result2 = 2;
         Test[] tests = {
-                new Test(test1, result1)
+                new Test(test1, result1),
+                new Test(test2, result2)
         };
 
         //Run test

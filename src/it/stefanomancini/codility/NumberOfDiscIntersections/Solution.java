@@ -25,17 +25,19 @@ class Solution {
 
     int solution(int[] A) {
         int N = A.length;
-        int[] left = new int[N];
-        int[] right = new int[N];
+        long[] left = new long[N];
+        long[] right = new long[N];
         int intersections = 0;
         for (int i = 0; i < N; i++) {
-            left[i] = i - A[i];
-            right[i] = i + A[i];
+            left[i] = (long) i - A[i];
+            right[i] = (long) i + A[i];
         }
         for (int j = 0; j < N - 1; j++)
             for (int k = j + 1; k < N; k++) {
                 if (right[j] >= left[k] && right[k] >= left[j])
                     intersections++;
+                if (intersections > 10000000)
+                    return -1;
             }
         return intersections;
     }
